@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard | Centenary Bank</title>
+    <title>Approver | Centenary Bank</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {{-- Fonts + Icons --}}
@@ -117,7 +117,7 @@
 <body>
 
     <div class="sidebar">
-        <h2><i class="fas fa-university"></i> Cente Store</h2>
+        <h2><i class="fas fa-university"></i> Cente Approve</h2>
         <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
         <a href="#"><i class="fas fa-file-alt"></i> Requests</a>
         <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
@@ -130,14 +130,14 @@
 
     <div class="content">
         <div class="topbar">
-            <h1>Welcome, {{ $user->first_name }}!</h1>
+            <h1>Welcome, {{ $approve->first_name }}!</h1>
         </div>
 
         <div class="main">
             <div class="card">
                 <h2>Account Details</h2>
-                <p><strong>Username:</strong> {{ $user->username }}</p>
-                <p><strong>Email:</strong> {{ $user->email }}</p>
+                <p><strong>Username:</strong> {{ $approve->username }}</p>
+                <p><strong>Email:</strong> {{ $approve->email }}</p>
 
                 <a href="#" class="link-button"><i class="fas fa-folder-open"></i> Manage Requests</a>
             </div>

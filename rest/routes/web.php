@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ApproveDashboard;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -18,6 +19,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 //Route::middleware(['auth.custom'])->group(function () {
     // Dashboard route
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
+    Route::get('/approve', [ApproveDashboard::class, 'approves'])->name('approve');
    
-//});
+    //Password change
+  // Route::middleware(['auth.custom'])->group(function () {
+    Route::get('/change', [AuthController::class, 'showChangePasswordForm'])->name('change');
+    Route::post('/update', [AuthController::class, 'changePassword'])->name('update');
+ 

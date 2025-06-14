@@ -3,31 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\RequestForm;
+use App\Models\Approver;
 
-
-class DashboardController extends Controller
+class ApproveDashboard extends Controller
 {
     //
-    public function index(Request $httpRequest)
+      public function approves(Request $httpRequest)
     {
         // Retrieve the logged-in user:
-        $userId = $httpRequest->session()->get('user_id');
-        $user = RequestForm::find($userId);
+        $approverId = $httpRequest->session()->get('approver_id');
+        $approver = Approver::find($approverId);
 
         // If user not found (shouldn't happen if middleware is correct), force logout:
-        if (! $user) {
+        if (! $approver) {
             // Clear session and redirect:
-            $httpRequest->session()->forget('user_id');
+            $httpRequest->session()->forget('approver_id');
             return redirect()->route('login')->withErrors('User not found.');
         }
 
         // Pass user data to view as needed:
-        return view('dashboard.index', [
-            'user' => $user,
+        return view('dashboard.approves', [
+            'approve' => $approver,
             // other data for dashboard...
         ]);
     }
 
 
 }
+
