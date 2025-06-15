@@ -112,6 +112,16 @@
         .link-button:hover {
             background-color: #0077cc;
         }
+
+        .submenu a {
+    padding-left: 35px;
+    font-size: 14px;
+    color: #ddd;
+}
+.submenu a:hover {
+    background-color: #0062b5;
+}
+        
     </style>
 </head>
 <body>
@@ -119,9 +129,23 @@
     <div class="sidebar">
         <h2><i class="fas fa-university"></i> Cente Store</h2>
         <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
-        <a href="#"><i class="fas fa-file-alt"></i> Requests</a>
-        <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
-        <a href="{{ route('change') }}"><i class="fas fa-cog"></i> Settings</a>
+       
+        {{-- <a href="#"><i class="fas fa-file-alt"></i> My Requisitions</a> --}}
+
+       <a href="javascript:void(0);" onclick="toggleDropdown()" class="dropdown-toggle">
+       <i class="fas fa-file-alt"></i> My Requisitions <i class="fas fa-caret-down" style="float: right;"></i>
+       </a>
+       <div id="requisition-submenu" class="submenu">
+       <a href="new">New Requisitions</a>
+       <a href="approved">Approved</a>
+       <a href="draft">Draft</a>
+       <a href="pending">Pending</a>
+       <a href="rejected">Rejected</a>
+       </div>
+       
+        <a href="{{ route('change') }}" style="color:red;"><i class="fas fa-cog"></i> <strong>User Account</strong></a>
+        
+
         <form method="POST" action="{{ route('logout') }}" style="margin-top: 20px;">
             @csrf
             <button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
@@ -139,10 +163,18 @@
                 <p><strong>Username:</strong> {{ $user->username }}</p>
                 <p><strong>Email:</strong> {{ $user->email }}</p>
 
-                <a href="#" class="link-button"><i class="fas fa-folder-open"></i> Manage Requests</a>
+                <a href="#" class="link-button"><i class="fas fa-folder-open"></i> Manage Requisitions</a>
             </div>
         </div>
     </div>
+  
+    <script>
+    function toggleDropdown() {
+        const submenu = document.getElementById('requisition-submenu');
+        submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+    }
+    </script>
+    
 
 </body>
 </html>

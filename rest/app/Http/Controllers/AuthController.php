@@ -69,12 +69,9 @@ class AuthController extends Controller
         return redirect()->route('login')->with('status', 'You have been logged out successfully.');
     }
 
-    public function showChangePasswordForm(Request $req)
+    public function showChangePasswordForm()
 {
-    $req->validate([
-    'current_password' => 'required',
-    'new_password' => 'required|string|min:6|confirmed',
-]);
+    
     
 
         return view('auth.change');

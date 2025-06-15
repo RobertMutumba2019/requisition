@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Change Password</title>
+    <title>Update Password</title>
     <style>
         body { font-family: Arial; background: #f4f4f4; padding: 20px; }
         .container { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
@@ -15,9 +15,7 @@
 <body>
 <div class="container">
 
-    <div style="text-align: right; margin-bottom: 15px;">
-        <a href="{{ route('dashboard') }}" style="text-decoration: none; background-color: #555; color: white; padding: 8px 15px; border-radius: 5px;">&larr; Back to Dashboard</a>
-    </div>
+   
     <h2>Change Password</h2>
 
     @if(session('status'))

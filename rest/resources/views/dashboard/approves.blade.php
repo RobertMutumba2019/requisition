@@ -118,10 +118,18 @@
 
     <div class="sidebar">
         <h2><i class="fas fa-university"></i> Cente Approve</h2>
-        <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
-        <a href="#"><i class="fas fa-file-alt"></i> Requests</a>
-        <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
-        <a href="{{ route('change') }}"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" class="active"><i class="fas fa-home"></i> Admin</a>
+        <a href="{{ route('my') }}"><i class="fas fa-file-alt"></i> My Requisitions</a>
+        <a href="{{ route('audit') }}"><i class="fas fa-file-alt"></i> Audit</a>
+        <a href="{{ route('users') }}"><i class="fas fa-file-alt"></i> Users</a>
+        <a href="{{ route('Right') }}"><i class="fas fa-file-alt"></i> User Rights & Privileges</a>
+        <a href="{{ route('Role') }}"><i class="fas fa-file-alt"></i> User Role</a>
+        <a href="{{ route('designation') }}"><i class="fas fa-file-alt"></i> Designation</a>
+        <a href="{{ route('branches') }}"><i class="fas fa-file-alt"></i> Branches</a>
+        <a href="{{ route('department') }}"><i class="fas fa-file-alt"></i> Departments</a>
+        <a href="{{ route('approved') }}"><i class="fas fa-file-alt"></i> Approval Matrix</a>
+        <a href="{{ route('my') }}"><i class="fas fa-user-circle"></i> Groups</a>
+        <a href="{{ route('group') }}"style="color:red;"><i class="fas fa-cog"></i><strong>Settings</strong></a>
         <form method="POST" action="{{ route('logout') }}" style="margin-top: 20px;">
             @csrf
             <button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
